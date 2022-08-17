@@ -40,10 +40,22 @@ public class Topic_00_Template {
 
 	@Test
 	public void TC_03() {
+
+		sleepInSecond(5);
 	}
 
 	@AfterClass
 	public void afterClass() {
 		driver.quit();
+	}
+
+	// Sleep cứng (Static wait)
+	public void sleepInSecond(long timeInSecond) {
+		try {
+			Thread.sleep(timeInSecond * 1000);
+
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
 	}
 }
