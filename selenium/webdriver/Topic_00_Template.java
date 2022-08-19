@@ -4,12 +4,18 @@ import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 public class Topic_00_Template {
+
+	// Khai báo
 	WebDriver driver;
+	WebDriverWait explicitWait;
+
+	// Khai báo + khởi tạo
 	String projectPath = System.getProperty("user.dir");
 	String osName = System.getProperty("os.name");
 
@@ -23,7 +29,13 @@ public class Topic_00_Template {
 		{
 			System.setProperty("webdriver.gecko.driver", projectPath + "\\browserDrivers\\geckodriver.exe");
 		}
+
+		// Khởi tạo driver
 		driver = new FirefoxDriver();
+
+		// Khởi tạo wait
+		explicitWait = new WebDriverWait(driver, 30);
+
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		driver.manage().window().maximize();
 

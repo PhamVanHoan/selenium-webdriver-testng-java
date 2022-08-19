@@ -96,8 +96,11 @@ public class Topic_07_Default_Dropdown {
 	public void TC_02_Default_Dropdown() {
 
 		driver.get("https://rode.com/en/support/where-to-buy");
-		driver.findElement(By.xpath("//button[contains(text(), 'Allow All')]")).click();
+		WebElement allowCookieButton = driver.findElement(By.xpath("//button[contains(text(), 'Allow All')]"));
 		sleepInSecond(3);
+		if (allowCookieButton.isDisplayed()) {
+			allowCookieButton.click();
+		}
 
 		select = new Select(driver.findElement(By.id("country")));
 
