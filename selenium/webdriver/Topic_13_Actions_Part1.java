@@ -18,7 +18,7 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-public class Topic_13_Actions {
+public class Topic_13_Actions_Part1 {
 
 	// Khai báo
 	WebDriver driver;
